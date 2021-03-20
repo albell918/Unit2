@@ -81,14 +81,13 @@ public class Triangle {
     }
 
     public double getArea() {
-        return Math.sqrt(this.getHalfP() * (this.getHalfP() - this.side1) * (this.getHalfP() - this.side2) * (this.getHalfP() - this.side3));
+        return Math.sqrt(this.getHalfP() * (this.getHalfP() - this.side1) *
+                (this.getHalfP() - this.side2) * (this.getHalfP() - this.side3));
     }
 
     public double getBiggestSide(Triangle t) {
 
         double biggest = 0;
-
-//        t.getSide1()>t.getSide2() ? biggest=this.side1 : biggest=this.side2;
 
         if (t.getSide1() > t.getSide2()) {
             biggest = this.side1;
@@ -106,8 +105,6 @@ public class Triangle {
 
         double smallest = 0;
 
-//        t.getSide1()>t.getSide2() ? biggest=this.side1 : biggest=this.side2;
-
         if (t.getSide1() < t.getSide2()) {
             smallest = this.side1;
         } else smallest = this.side2;
@@ -119,7 +116,6 @@ public class Triangle {
         return smallest;
 
     }
-
 
     public static void main(String[] args) {
 
