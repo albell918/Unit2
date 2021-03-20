@@ -124,10 +124,6 @@ public class Triangle {
     }
 
 
-
-//    man.getAge() >= 18 ? "Все в порядке, проходите!" : "Этот фильм не подходит для вашего возраста!";
-
-
     public static void main(String[] args) {
 
         Triangle tr1 = new Triangle(13,12,5);
