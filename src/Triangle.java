@@ -128,6 +128,12 @@ public class Triangle {
         System.out.println("Smallest side :" + tr1.getSmallestSide(tr1));
         System.out.println("Biggest side: " + tr1.getBiggestSide(tr1));
 
+//        Triangle{side1=13.0, side2=12.0, side3=5.0}
+//        Perimeter: 30.0
+//        Semi-perimeter: 15.0
+//        Area: 30.0
+//        Smallest side :5.0
+//        Biggest side: 13.0
 
     }
 }
