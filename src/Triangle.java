@@ -128,11 +128,12 @@ public class Triangle {
 
         Triangle tr1 = new Triangle(13,12,5);
 
-        System.out.println(tr1.getP());
-        System.out.println(tr1.getHalfP());
-        System.out.println(tr1.getArea());
-        System.out.println(tr1.getSmallestSide(tr1));
-        System.out.println(tr1.getBiggestSide(tr1));
+        System.out.println(tr1.toString());
+        System.out.println("Perimeter: "+tr1.getP());
+        System.out.println("Semi-perimeter: "+tr1.getHalfP());
+        System.out.println("Area: "+tr1.getArea());
+        System.out.println("Smallest side :"+tr1.getSmallestSide(tr1));
+        System.out.println("Biggest side: "+tr1.getBiggestSide(tr1));
 
 
     }
