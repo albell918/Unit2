@@ -91,5 +91,9 @@ public class Door extends Rectangle {
 
     }
 
+//    Model h9e4 is the most expensive model.
+//    Door{Rectangle{length=190.0, width=60.0}colour='brown', modelName='Model c3e4', price=2500.5}
+//    Door{Rectangle{length=180.0, width=60.0}colour='black', modelName='Model g5e4', price=1750.0}
+//    Door{Rectangle{length=190.0, width=80.0}colour='black', modelName='Model h9e4', price=3000.0}
 
 }
