@@ -9,24 +9,17 @@ public class Door extends Rectangle {
 
     private String colour;
     private String modelName;
-    private double price;
+    private String typeOfMaterial;
+
 
     public Door() {
     }
 
-    public Door(double length, double width, String colour, String modelName, double price) {
+    public Door(double length, double width, String colour, String modelName, String typeOfMaterial) {
         super(length, width);
         this.colour = colour;
         this.modelName = modelName;
-        this.price = price;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
+        this.typeOfMaterial = typeOfMaterial;
     }
 
     public String getColour() {
@@ -47,11 +40,36 @@ public class Door extends Rectangle {
 
     @Override
     public String toString() {
-        return "Door{" + super.toString() +
+        return "Door{" +
                 "colour='" + colour + '\'' +
                 ", modelName='" + modelName + '\'' +
-                ", price=" + price +
+                ", typeOfMaterial='" + typeOfMaterial + '\'' +
+                ", Price='" + this.calcPrice() + '\'' +
                 '}';
+    }
+
+    public double calcPrice(){
+
+        double price = 0.0;
+
+        if (this.typeOfMaterial=="Wood"){
+
+            price = 85*this.getLength()*this.getWidth()/10000;
+
+        }
+        else if (this.typeOfMaterial=="Iron"){
+
+            price = 120*this.getLength()*this.getWidth()/10000;
+
+        }
+
+        else {
+
+            price = 70*this.getLength()*this.getWidth()/10000;
+
+        }
+
+        return price;
     }
 
     public static String getTheMostExpensiveDoor(Door[] d) {
@@ -62,8 +80,8 @@ public class Door extends Rectangle {
 
         for (int i = 0; i < d.length; i++) {
 
-            if (d[i].getPrice() > maxPrice) {
-                maxPrice = d[i].price;
+            if (d[i].calcPrice() > maxPrice) {
+                maxPrice = d[i].calcPrice();
 
                 name = d[i].getModelName();
             }
@@ -76,9 +94,9 @@ public class Door extends Rectangle {
 
     public static void main(String[] args) {
 
-        Door d1 = new Door(190, 60, "brown", "Model c3e4", 2500.5);
-        Door d2 = new Door(180, 60, "black", "Model g5e4", 1750);
-        Door d3 = new Door(190, 80, "black", "Model h9e4", 3000);
+        Door d1 = new Door(190, 60, "brown", "Model c3e4","Wood");
+        Door d2 = new Door(180, 60, "black", "Model g5e4","Iron");
+        Door d3 = new Door(190, 80, "black", "Model h9e4","Plastic");
 
         Door[] dormass = new Door[]{d1, d2, d3};
 
@@ -91,9 +109,9 @@ public class Door extends Rectangle {
 
     }
 
-//    Model h9e4 is the most expensive model.
-//    Door{Rectangle{length=190.0, width=60.0}colour='brown', modelName='Model c3e4', price=2500.5}
-//    Door{Rectangle{length=180.0, width=60.0}colour='black', modelName='Model g5e4', price=1750.0}
-//    Door{Rectangle{length=190.0, width=80.0}colour='black', modelName='Model h9e4', price=3000.0}
-
 }
+
+//        Model g5e4 is the most expensive model.
+//        Door{colour='brown', modelName='Model c3e4', typeOfMaterial='Wood', Price='96.9'}
+//        Door{colour='black', modelName='Model g5e4', typeOfMaterial='Iron', Price='129.6'}
+//        Door{colour='black', modelName='Model h9e4', typeOfMaterial='Plastic', Price='106.4'}

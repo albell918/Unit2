@@ -7,6 +7,7 @@ import java.util.Objects;
  * @class Triangle
  * @since 17.03.2021 - 21.04
  */
+
 public class Triangle {
 
     private double side1;
