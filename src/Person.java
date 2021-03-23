@@ -7,7 +7,7 @@
  */
 public class Person {
 
-    private String name;
+    protected String name;
     private int age;
     private String gender;
     private double height;

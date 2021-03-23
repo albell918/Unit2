@@ -91,6 +91,16 @@ public class Student extends Person {
         this.personalAchievements = personalAchievements;
     }
 
+    @Override
+    public String toString() {
+        return "Student{" + "name: " + super.name + '\'' +
+                " studentId='" + studentId + '\'' +
+                ", faculty='" + faculty + '\'' +
+                ", groupName='" + groupName + '\'' +
+                ", major='" + major + '\'' +
+                ", specialty='" + specialty + '\'' +
+                '}';
+    }
 
     public String getStudentId() {
         return studentId;
@@ -121,8 +131,11 @@ public class Student extends Person {
                 new Date(1472731200), new Date(1593518400), "bachelor", true,
                 false, "");
 
+        System.out.println(st2.toString());
+
     }
 
-//    the GPA of student FI236463is: 79.0
+//   the GPA of student FI236463is: 79.0
+//   Student{name: Ivan Ivanov' studentId='TYU473432', faculty='CS', groupName='CS-128', major='Computer science', specialty='CS and AI'}
 
 }
