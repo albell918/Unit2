@@ -48,24 +48,21 @@ public class Door extends Rectangle {
                 '}';
     }
 
-    public double calcPrice(){
+    public double calcPrice() {
 
         double price = 0.0;
 
-        if (this.typeOfMaterial=="Wood"){
+        if (this.typeOfMaterial == "Wood") {
 
-            price = 85*this.getLength()*this.getWidth()/10000;
+            price = 85 * this.getLength() * this.getWidth() / 10000;
 
-        }
-        else if (this.typeOfMaterial=="Iron"){
+        } else if (this.typeOfMaterial == "Iron") {
 
-            price = 120*this.getLength()*this.getWidth()/10000;
+            price = 120 * this.getLength() * this.getWidth() / 10000;
 
-        }
+        } else {
 
-        else {
-
-            price = 70*this.getLength()*this.getWidth()/10000;
+            price = 70 * this.getLength() * this.getWidth() / 10000;
 
         }
 
@@ -94,9 +91,9 @@ public class Door extends Rectangle {
 
     public static void main(String[] args) {
 
-        Door d1 = new Door(190, 60, "brown", "Model c3e4","Wood");
-        Door d2 = new Door(180, 60, "black", "Model g5e4","Iron");
-        Door d3 = new Door(190, 80, "black", "Model h9e4","Plastic");
+        Door d1 = new Door(190, 60, "brown", "Model c3e4", "Wood");
+        Door d2 = new Door(180, 60, "black", "Model g5e4", "Iron");
+        Door d3 = new Door(190, 80, "black", "Model h9e4", "Plastic");
 
         Door[] dormass = new Door[]{d1, d2, d3};
 
