@@ -7,6 +7,6 @@
  */
 public interface IWritable {
 
-    public abstract  void toTXT(Rectangle r);
+    public abstract void toTXT(Rectangle r);
 
 }

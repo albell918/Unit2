@@ -7,7 +7,7 @@
  */
 public class Person {
 
-    protected String name;
+    private String name;
     private int age;
     private String gender;
     private double height;
@@ -35,5 +35,13 @@ public class Person {
         this.nationality = nationality;
         this.isStudying = isStudying;
         this.isWorking = isWorking;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
     }
 }

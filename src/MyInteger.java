@@ -36,7 +36,7 @@ public class MyInteger {
 
 
         }
-      return true;
+        return true;
     }
 
     public static void main(String[] args) {
@@ -44,10 +44,13 @@ public class MyInteger {
         MyInteger mi25 = new MyInteger(25);
         MyInteger mi11 = new MyInteger(11);
 
-        System.out.println("11 is prime - "+mi11.isPrime());
-        System.out.println("23 is prime - "+mi23.isPrime());
-        System.out.println("25 is prime - "+mi25.isPrime());
+        System.out.println("11 is prime - " + mi11.isPrime());
+        System.out.println("23 is prime - " + mi23.isPrime());
+        System.out.println("25 is prime - " + mi25.isPrime());
     }
 
-
 }
+
+    //11 is prime - true
+    //23 is prime - true
+    //25 is prime - false

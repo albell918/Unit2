@@ -142,11 +142,31 @@ public class Student extends Person {
         this.personalAchievements = personalAchievements;
     }
 
+//    @Override
+//    public String toString() {
+//        return "Student{" +
+//                "name='" + super.name + '\'' +
+//                ", studentId='" + studentId + '\'' +
+//                ", faculty='" + faculty + '\'' +
+//                ", department='" + department + '\'' +
+//                ", groupName='" + groupName + '\'' +
+//                ", major='" + major + '\'' +
+//                ", specialty='" + specialty + '\'' +
+//                ", formOfEducation='" + formOfEducation + '\'' +
+//                ", dateOfAdmission=" + dateOfAdmission +
+//                ", dateOfGraduation=" + dateOfGraduation +
+//                ", currentAcademicDegree='" + currentAcademicDegree + '\'' +
+//                ", isGranted=" + isGranted +
+//                ", hadAcademicLeave=" + hadAcademicLeave +
+//                ", personalAchievements='" + personalAchievements + '\'' +
+//                '}';
+//    }
+
+
     @Override
     public String toString() {
-        return "Student{" +
-                "name='" + name + '\'' +
-                ", studentId='" + studentId + '\'' +
+        return "Student{" + super.getName() + '\'' +
+                "studentId='" + studentId + '\'' +
                 ", faculty='" + faculty + '\'' +
                 ", department='" + department + '\'' +
                 ", groupName='" + groupName + '\'' +
@@ -183,16 +203,11 @@ public class Student extends Person {
             this.studentToBuild = new Student();
         }
 
-        public Builder setSimilarTo(Student student) {
+        public Builder setName(String name) {
 
+            studentToBuild.setName(name);
             return this;
         }
-
-//        public Builder setName(String name) {
-//            super(name);
-//
-//            return this;
-//        }
 
         public Builder setStudentId(String studentId) {
             studentToBuild.setStudentId(studentId);
@@ -260,12 +275,12 @@ public class Student extends Person {
         }
 
 
-        public Student build(){
+        public Student build() {
             return studentToBuild;
         }
     }
 
-        public static void main(String[] args) {
+    public static void main(String[] args) {
 
         Student st1 = new Student("Ivan Kotov", "FI236463", "daily", "",
                 new Date(1472731200), new Date(1593518400), false, 75, 75,
@@ -283,6 +298,7 @@ public class Student extends Person {
         System.out.println(st2.toString());
 
         Student Vlad1 = new Builder()
+                .setName("Vlad ")
                 .setStudentId("4y54757")
                 .setFaculty("SE AM")
                 .setDepartment("Applied mathematics")
@@ -298,22 +314,20 @@ public class Student extends Person {
                 .setPersonalAchievements("")
                 .studentToBuild;
 
-            System.out.println(Vlad1);
-
-
-//        Student petro = new Student.Builder()
-//                .setFirstName("Petro")
-//                .setLastName("Petrov")
-//                .setPatronymic("Petrovich")
-//                .setBirth(LocalDate.of(2000,1,1))
-//                .setGender(true)
-//                .setPhone("76868686868686")
-//                .build();
+        System.out.println(Vlad1);
 
 
     }
 
-//   the GPA of student FI236463is: 79.0
-//   Student{name: Ivan Ivanov' studentId='TYU473432', faculty='CS', groupName='CS-128', major='Computer science', specialty='CS and AI'}
+//    the GPA of student FI236463is: 79.0
+//    Student{Ivan Ivanov'studentId='TYU473432', faculty='CS', department='Some Department', groupName='CS-128',
+//    major='Computer science', specialty='CS and AI', formOfEducation='daily',
+//    dateOfAdmission=Sun Jan 18 03:05:31 GMT+02:00 1970, dateOfGraduation=Mon Jan 19 12:38:38 GMT+02:00 1970,
+//    currentAcademicDegree='bachelor', isGranted=true, hadAcademicLeave=false, personalAchievements=''}
+//     Student{Vlad'studentId='4y54757', faculty='SE AM', department='Applied mathematics', groupName='AM-127',
+//     major='AM', specialty='Data analysis and applied mathematics', formOfEducation='daily',
+//     dateOfAdmission=Sun Jan 18 03:05:31 GMT+02:00 1970, dateOfGraduation=Mon Jan 19 12:38:38 GMT+02:00 1970,
+//     currentAcademicDegree='Bachelor', isGranted=true, hadAcademicLeave=false, personalAchievements=''}
+
 
 }

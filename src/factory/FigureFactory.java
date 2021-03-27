@@ -15,19 +15,15 @@ public class FigureFactory {
             return null;
         }
 
-        if (figureType.equalsIgnoreCase("Circle")){
+        if (figureType.equalsIgnoreCase("Circle")) {
 
             return new Circle();
 
-        }
-
-        else if (figureType.equalsIgnoreCase("Rectangle")){
+        } else if (figureType.equalsIgnoreCase("Rectangle")) {
 
             return new Rectangle();
 
-        }
-
-        else if (figureType.equalsIgnoreCase("Triangle")){
+        } else if (figureType.equalsIgnoreCase("Triangle")) {
 
             return new Triangle();
 

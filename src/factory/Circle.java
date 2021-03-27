@@ -7,7 +7,7 @@ package factory;
  * @class Circle
  * @since 25.03.2021 - 21.50
  */
-public class Circle implements Figure{
+public class Circle implements Figure {
 
     private double radius;
 

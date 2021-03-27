@@ -7,7 +7,7 @@ package factory;
  * @class Triangle
  * @since 25.03.2021 - 21.49
  */
-public class Triangle implements Figure{
+public class Triangle implements Figure {
 
     private double trSide1;
     private double trSide2;

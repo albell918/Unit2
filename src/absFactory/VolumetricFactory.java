@@ -16,7 +16,7 @@ public class VolumetricFactory extends AbstractFactory {
 
         if (figureType.equalsIgnoreCase("Sphere")) {
 
-            return  new Sphere();
+            return new Sphere();
 
         }
 
