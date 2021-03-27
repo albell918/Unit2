@@ -1,4 +1,3 @@
-import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -91,14 +90,75 @@ public class Student extends Person {
         this.personalAchievements = personalAchievements;
     }
 
+    public void setStudentId(String studentId) {
+        this.studentId = studentId;
+    }
+
+    public void setFaculty(String faculty) {
+        this.faculty = faculty;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
+    }
+
+    public void setMajor(String major) {
+        this.major = major;
+    }
+
+    public void setSpecialty(String specialty) {
+        this.specialty = specialty;
+    }
+
+    public void setFormOfEducation(String formOfEducation) {
+        this.formOfEducation = formOfEducation;
+    }
+
+    public void setDateOfAdmission(Date dateOfAdmission) {
+        this.dateOfAdmission = dateOfAdmission;
+    }
+
+    public void setDateOfGraduation(Date dateOfGraduation) {
+        this.dateOfGraduation = dateOfGraduation;
+    }
+
+    public void setCurrentAcademicDegree(String currentAcademicDegree) {
+        this.currentAcademicDegree = currentAcademicDegree;
+    }
+
+    public void setGranted(boolean granted) {
+        isGranted = granted;
+    }
+
+    public void setHadAcademicLeave(boolean hadAcademicLeave) {
+        this.hadAcademicLeave = hadAcademicLeave;
+    }
+
+    public void setPersonalAchievements(String personalAchievements) {
+        this.personalAchievements = personalAchievements;
+    }
+
     @Override
     public String toString() {
-        return "Student{" + "name: " + super.name + '\'' +
-                " studentId='" + studentId + '\'' +
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", studentId='" + studentId + '\'' +
                 ", faculty='" + faculty + '\'' +
+                ", department='" + department + '\'' +
                 ", groupName='" + groupName + '\'' +
                 ", major='" + major + '\'' +
                 ", specialty='" + specialty + '\'' +
+                ", formOfEducation='" + formOfEducation + '\'' +
+                ", dateOfAdmission=" + dateOfAdmission +
+                ", dateOfGraduation=" + dateOfGraduation +
+                ", currentAcademicDegree='" + currentAcademicDegree + '\'' +
+                ", isGranted=" + isGranted +
+                ", hadAcademicLeave=" + hadAcademicLeave +
+                ", personalAchievements='" + personalAchievements + '\'' +
                 '}';
     }
 
@@ -116,7 +176,96 @@ public class Student extends Person {
 
     }
 
-    public static void main(String[] args) {
+    public static class Builder {
+        private Student studentToBuild;
+
+        public Builder() {
+            this.studentToBuild = new Student();
+        }
+
+        public Builder setSimilarTo(Student student) {
+
+            return this;
+        }
+
+//        public Builder setName(String name) {
+//            super(name);
+//
+//            return this;
+//        }
+
+        public Builder setStudentId(String studentId) {
+            studentToBuild.setStudentId(studentId);
+            return this;
+        }
+
+        public Builder setFaculty(String faculty) {
+            studentToBuild.setFaculty(faculty);
+            return this;
+        }
+
+        public Builder setDepartment(String department) {
+            studentToBuild.setDepartment(department);
+            return this;
+        }
+
+        public Builder setGroupName(String groupName) {
+            studentToBuild.setGroupName(groupName);
+            return this;
+        }
+
+        public Builder setMajor(String major) {
+            studentToBuild.setMajor(major);
+            return this;
+        }
+
+        public Builder setSpecialty(String specialty) {
+            studentToBuild.setSpecialty(specialty);
+            return this;
+        }
+
+        public Builder setFormOfEducation(String formOfEducation) {
+            studentToBuild.setFormOfEducation(formOfEducation);
+            return this;
+        }
+
+        public Builder setDateOfAdmission(Date dateOfAdmission) {
+            studentToBuild.setDateOfAdmission(dateOfAdmission);
+            return this;
+        }
+
+        public Builder setDateOfGraduation(Date dateOfGraduation) {
+            studentToBuild.setDateOfGraduation(dateOfGraduation);
+            return this;
+        }
+
+        public Builder setCurrentAcademicDegree(String academicDegree) {
+            studentToBuild.setCurrentAcademicDegree(academicDegree);
+            return this;
+        }
+
+        public Builder setIsGranted(Boolean isGranted) {
+            studentToBuild.setGranted(isGranted);
+            return this;
+        }
+
+        public Builder setHadAcademicLeave(Boolean hadAcademicLeave) {
+            studentToBuild.setHadAcademicLeave(hadAcademicLeave);
+            return this;
+        }
+
+        public Builder setPersonalAchievements(String personalAchievements) {
+            studentToBuild.setPersonalAchievements(personalAchievements);
+            return this;
+        }
+
+
+        public Student build(){
+            return studentToBuild;
+        }
+    }
+
+        public static void main(String[] args) {
 
         Student st1 = new Student("Ivan Kotov", "FI236463", "daily", "",
                 new Date(1472731200), new Date(1593518400), false, 75, 75,
@@ -132,6 +281,35 @@ public class Student extends Person {
                 false, "");
 
         System.out.println(st2.toString());
+
+        Student Vlad1 = new Builder()
+                .setStudentId("4y54757")
+                .setFaculty("SE AM")
+                .setDepartment("Applied mathematics")
+                .setGroupName("AM-127")
+                .setMajor("AM")
+                .setSpecialty("Data analysis and applied mathematics")
+                .setFormOfEducation("daily")
+                .setDateOfAdmission(new Date(1472731200))
+                .setDateOfGraduation(new Date(1593518400))
+                .setCurrentAcademicDegree("Bachelor")
+                .setIsGranted(true)
+                .setHadAcademicLeave(false)
+                .setPersonalAchievements("")
+                .studentToBuild;
+
+            System.out.println(Vlad1);
+
+
+//        Student petro = new Student.Builder()
+//                .setFirstName("Petro")
+//                .setLastName("Petrov")
+//                .setPatronymic("Petrovich")
+//                .setBirth(LocalDate.of(2000,1,1))
+//                .setGender(true)
+//                .setPhone("76868686868686")
+//                .build();
+
 
     }
 
